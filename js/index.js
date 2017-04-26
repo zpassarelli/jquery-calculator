@@ -74,7 +74,7 @@ $(document).ready(function(){
   $('#equals').on('click',function(){
     var exp = screen.html().split(' ');
     var result = calculate(parseFloat(exp[0]), exp[1], parseFloat(exp[2]));
-    if(result === Infinity || exp.length !== 3){
+    if( isNaN(result) || result === Infinity || result === -Infinity || exp.length !== 3){
       screen.html("Error");
     } else {
       screen.html(result);
