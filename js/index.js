@@ -34,6 +34,13 @@ $(document).ready(function(){
     resultState = false;
   };
 
+  function updateScreen(){
+    if(screen.html().length > 12){
+      var data = parseFloat(screen.html());
+      screen.html(data.toFixed(12));
+    }
+  }
+
   //number inputs
   $.each(inputs, function(i){
     $(inputs[i]).on('click',function(){
@@ -73,6 +80,7 @@ $(document).ready(function(){
       screen.html(result);
     }
     resultState = true;
+    updateScreen();
   });
 
 });
